@@ -1,0 +1,8 @@
+{
+  "packages": [
+    "libs/components/*",
+    "libs/layouts/*",
+    "libs/platform/*"
+  ],
+  "version": "0.1.0-aplha.0"
+}
