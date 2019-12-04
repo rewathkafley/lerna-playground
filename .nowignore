@@ -1,0 +1,17 @@
+.idea
+.vscode
+apps
+scripts
+tools
+.editorconfig
+.npmrc
+.releaserc.json
+bitbucket-pipelines.yml
+CHANGELOG.md
+commitlint.config.js
+CONTRIBUTING.md
+lerna.json
+nx.json
+tsconfig.json
+tslint.json
+README.md

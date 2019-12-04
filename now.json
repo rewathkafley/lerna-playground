@@ -1,0 +1,12 @@
+{
+  "name": "safire-demo",
+  "version": 2,
+  "scope": "safire-team",
+
+  "build": {
+    "env": {
+      "name": "staging"
+    }
+  },
+  "builds": [{ "src": "package.json", "use": "@now/static-build" }]
+}
