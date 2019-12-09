@@ -16,9 +16,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@safire-framework/components/button": [
-        "libs/components/button/src/index.ts"
-      ]
+      "@safire/components/button": ["libs/components/button/src"],
+      "@safire/components": ["libs/components/src"],
+      "@safire/components/checkbox": ["libs/components/checkbox/src"]
     }
   },
   "exclude": ["node_modules", "tmp"]

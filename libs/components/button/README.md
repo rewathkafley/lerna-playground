@@ -1,8 +1,4 @@
-# Button
-
-## To install
-
-Run `yarn add @safire/components/button` in the project root.
+# Button Component
 
 ## Usage
 

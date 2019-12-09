@@ -1,1 +1,1 @@
-export * from './lib/components-button.module';
+export * from './lib/button.module';

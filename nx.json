@@ -1,5 +1,5 @@
 {
-  "npmScope": "safire-framework",
+  "npmScope": "safire",
   "implicitDependencies": {
     "workspace.json": "*",
     "package.json": "*",
@@ -15,7 +15,11 @@
       "tags": []
     },
     "components-button": {
-      "tags": []
+      "tags": ["scope:components", "type:button"]
+    },
+    "components": {
+      "tags": [],
+      "implicitDependencies": ["components-button"]
     }
   }
 }
