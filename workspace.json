@@ -120,6 +120,44 @@
           }
         }
       }
+    },
+    "components-button": {
+      "projectType": "library",
+      "root": "libs/components/button",
+      "sourceRoot": "libs/components/button/src",
+      "prefix": "sf",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "libs/components/button/tsconfig.lib.json",
+            "project": "libs/components/button/ng-package.json"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/components/button/tsconfig.lib.json",
+              "libs/components/button/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/components/button/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/components/button/jest.config.js",
+            "tsConfig": "libs/components/button/tsconfig.spec.json",
+            "setupFile": "libs/components/button/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {
