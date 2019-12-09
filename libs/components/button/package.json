@@ -1,6 +1,5 @@
 {
   "name": "components-button",
-  "version": "0.0.1",
   "peerDependencies": {
     "@angular/common": "^8.2.11",
     "@angular/core": "^8.2.11"
