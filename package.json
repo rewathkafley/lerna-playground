@@ -1,6 +1,6 @@
 {
   "name": "safire-framework",
-  "version": "0.1.0-aplha.1",
+  "version": "0.1.0-alpha.2",
   "scripts": {
     "nx": "nx",
     "start": "nx serve",
