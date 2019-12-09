@@ -1,6 +1,7 @@
 {
   "packages": [
     "libs/components/*",
+    "libs/components",
     "libs/layouts/*",
     "libs/platform/*"
   ],
