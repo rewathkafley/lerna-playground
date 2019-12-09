@@ -1,0 +1,18 @@
+{
+  "branch": "development",
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "config": "cz-lerna-changelog",
+        "parserOpts": {
+          "noteKeywords": [
+            "BREAKING CHANGE",
+            "BREAKING CHANGES"
+          ]
+        }
+      }
+    ],
+    "@semantic-release/release-notes-generator"
+  ]
+}

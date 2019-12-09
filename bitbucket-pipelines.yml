@@ -1,0 +1,87 @@
+# Safire Framework Bitbucket pipelines configuration
+# Version 1.0.0
+image: node:10.17.0
+
+definitions:
+  caches:
+    node: ./node_modules
+    yarn: /usr/local/Caches/yarn
+  steps:
+    - step: &install-dep
+        name: Install Dependencies
+        caches:
+          - node
+          - yarn
+        script:
+          - node scripts/registry_setup.js
+          - yarn config set cache-folder /usr/local/Caches/yarn
+          - yarn install --frozen-lockfile
+    - step: &lint
+        name: Lint
+        caches:
+          - node
+          - yarn
+        script:
+          - yarn affected:lint --parallel=true --base="origin/$BITBUCKET_PR_DESTINATION_BRANCH" --head=$BITBUCKET_BRANCH
+    - step: &test
+        name: Test
+        caches:
+          - node
+          - yarn
+        script:
+          - yarn affected:test --parallel=true --base="origin/$BITBUCKET_PR_DESTINATION_BRANCH" --head=$BITBUCKET_BRANCH
+    - step: &build
+        name: Build
+        caches:
+          - node
+          - yarn
+        script:
+          - yarn affected:build --parallel=true --base="origin/$BITBUCKET_PR_DESTINATION_BRANCH" --head=$BITBUCKET_BRANCH
+        artifacts:
+          - dist/**
+    - step: &deploy
+        name: Deploy
+        deployment: test
+        script:
+          - ./scripts/deploy.js
+
+pipelines:
+  pull-requests:
+    '**':
+      - step: *install-dep
+      - step: *lint
+      #- step: *test
+      - step: *build
+      - step:
+          name: Deploy Demo App to staging
+          deployment: staging
+          script:
+            - yarn global add now
+            - export NOW_PROJECT=safire-demo-staging
+            - export ENV=$BITBUCKET_DEPLOYMENT_ENVIRONMENT
+            - yarn deploy:demo
+  branches:
+    master:
+      - step:
+          <<: *deploy
+          name: Deploy to production
+          deployment: production
+          script:
+            - export ENV='production'
+      - step:
+          name: Deploy Demo App to production
+          deployment: production
+          trigger: manual
+          script:
+            - yarn global add now
+            - export NOW_PROJECT=safire-demo
+            - export ENV=$BITBUCKET_DEPLOYMENT_ENVIRONMENT
+            - yarn deploy:demo
+    development:
+      - step:
+          <<: *deploy
+          name: Deploy to staging
+          deployment: staging
+          script:
+            - export ENV='staging'
+

@@ -7,6 +7,5 @@
     "env": {
       "name": "staging"
     }
-  },
-  "builds": [{ "src": "package.json", "use": "@now/static-build" }]
+  }
 }
