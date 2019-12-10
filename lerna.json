@@ -4,17 +4,12 @@
     "libs/layouts/*",
     "libs/platform/*"
   ],
-  "version": "0.1.0-alpha.11",
+  "version": "0.1.0-alpha.12",
   "npmClient": "yarn",
   "command": {
     "publish": {
       "message": "chore(release): publish version %s"
     },
-    "version": {
-      "allowBranch": [
-        "master",
-        "development"
-      ]
-    }
+    "version": {}
   }
 }
