@@ -1,9 +1,9 @@
 {
   "name": "@safire/components",
-  "version": "0.1.0-alpha.9",
+  "version": "0.1.0-alpha.10",
   "peerDependencies": {
     "@angular/common": "^8.2.11",
     "@angular/core": "^8.2.11"
   },
-  "gitHead": "adc5aff26e664c6739d6c68d2c977cf06a4c11cc"
+  "gitHead": "4841c4b7c643a5c211d2752811afbc87ff50cefe"
 }
