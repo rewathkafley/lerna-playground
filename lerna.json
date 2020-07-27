@@ -4,11 +4,12 @@
     "libs/layouts/*",
     "libs/platform/*"
   ],
-  "version": "0.1.1",
+  "version": "0.1.2-alpha.0",
   "npmClient": "yarn",
   "command": {
     "publish": {
-      "message": "chore(release): publish version %s"
+      "message": "chore(release): publish version %s",
+      "registry": "https://npm.selise.dev/"
     },
     "version": {}
   }
