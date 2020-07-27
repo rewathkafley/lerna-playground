@@ -14,12 +14,9 @@
     "demo": {
       "tags": []
     },
-    "components-button": {
-      "tags": ["scope:components", "type:button"]
-    },
     "components": {
-      "tags": [],
-      "implicitDependencies": ["components-button"]
+      "tags": ["scope:components"],
+      "implicitDependencies": []
     }
   }
 }

@@ -8,16 +8,15 @@ try {
 
   /*We are making a stable release*/
   if (branch === 'master') {
-    const output = spawnSync('lerna version --conventional-commits --conventional-graduate=* --changelog-preset cz-lerna-changelog --force-publish=* --no-push --no-commit-hooks --yes');
+    const output = execSync('lerna version --conventional-commits --conventional-graduate=* --changelog-preset cz-lerna-changelog --force-publish=* --no-push --no-commit-hooks');
     /*lerna publish  --conventional-commits --conventional-prerelease --changelog-preset cz-lerna-changelog -m "chore(release): publish %s" --no-push --no-commit-hooks*/
 
     /*We are making a prerelease*/
   } else {
 
-    const output = spawnSync('lerna version --conventional-commits --conventional-prerelease=* --changelog-preset cz-lerna-changelog --yes');
+    execSync('lerna publish --conventional-commits --conventional-prerelease=* --changelog-preset cz-lerna-changelog --force-publish=* --no-push --no-commit-hooks', {stdio: 'inherit'});
     // We are making a prerelease
     /*lerna publish  --conventional-commits --conventional-prerelease --changelog-preset cz-lerna-changelog -m "chore(release): publish %s" --no-push --no-commit-hooks*/
-
   }
 
 } catch (e) {

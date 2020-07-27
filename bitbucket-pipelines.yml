@@ -39,6 +39,15 @@ definitions:
           - yarn affected:build --parallel=true --base="origin/$BITBUCKET_PR_DESTINATION_BRANCH" --head=$BITBUCKET_BRANCH
         artifacts:
           - dist/**
+    - step: &build-demo
+        name: Build Demo
+        caches:
+          - node
+          - yarn
+        script:
+          - yarn affected:build --base="origin/$BITBUCKET_PR_DESTINATION_BRANCH" --head=$BITBUCKET_BRANCH --exclude=components,components-button,layouts,platform
+        artifacts:
+          - dist/apps/demo
     - step: &deploy
         name: Deploy
         deployment: test
@@ -51,7 +60,7 @@ pipelines:
       - step: *install-dep
       - step: *lint
       #- step: *test
-      - step: *build
+      - step: *build-demo
       - step:
           name: Deploy Demo App to staging
           deployment: staging
