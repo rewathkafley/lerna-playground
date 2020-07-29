@@ -10,16 +10,41 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "typeRoots": ["node_modules/@types"],
-    "lib": ["es2017", "dom"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@safire/components/button": ["libs/components/button/src"],
-      "@safire/components": ["libs/components/src"],
-      "@safire/components/checkbox": ["libs/components/checkbox/src"]
+      "@safire/components/button": [
+        "dist/libs/components/button",
+        "libs/components/button/src"
+      ],
+      "@safire/components": [
+        "dist/libs/components",
+        "libs/components/src"
+      ],
+      "@safire/components/checkbox": [
+        "libs/components/checkbox/src"
+      ],
+      "@safire/forms": [
+        "libs/forms/src/index.ts"
+      ],
+      "@safire/forms2": [
+        "libs/forms2/src/index.ts"
+      ],
+      "@safire/stepper": [
+        "libs/stepper/src/index.ts"
+      ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

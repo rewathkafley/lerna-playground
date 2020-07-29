@@ -5,5 +5,8 @@
     "@angular/common": "^8.2.11",
     "@angular/core": "^8.2.11"
   },
-  "gitHead": "76069793a565b55280319891ce6c628083aff15c"
+  "gitHead": "76069793a565b55280319891ce6c628083aff15c",
+  "publishConfig": {
+    "directory": "../../dist/libs/components"
+  }
 }

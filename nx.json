@@ -17,6 +17,15 @@
     "components": {
       "tags": ["scope:components"],
       "implicitDependencies": []
+    },
+    "forms": {
+      "tags": []
+    },
+    "forms2": {
+      "tags": []
+    },
+    "stepper": {
+      "tags": []
     }
   }
 }
